@@ -1,0 +1,272 @@
+:root {
+    --clr-primary: #ff6f61;
+    --clr-secondary: #ff9a76;
+    --clr-accent: #ffd6c0;
+    --clr-white: #fff;
+    --radius: 70px;
+    --transition: 0.4s ease-in-out;
+    --padding-section: 20px;
+    --shadow-card: 0 12px 30px rgba(0,0,0,0.5);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--clr-white);
+    line-height: 1.6;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow-x: hidden;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.35));
+    z-index: -1;
+}
+
+body.page-index { background-image: url("images/http.jpg"); }
+body.page-about { background-image: url("images/httd.jpg"); }
+body.page-contact { background-image: url("images/htts.jpg"); }
+body.page-services { background-image: url("images/الصفحه الرابعه.jpg"); }
+
+.header {
+    width: 100%;
+    padding: 25px 0;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    position: relative;
+    z-index: 10;
+}
+
+.header__container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.nav__list { display: flex; gap: 30px; }
+
+.nav__link {
+    color: var(--clr-white);
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav__link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--clr-primary);
+    transition: width 0.3s;
+}
+
+.nav__link:hover::after { width: 100%; }
+.hero {
+    padding: 180px 20px 120px 20px;
+    text-align: center;
+}
+
+.hero__title {
+    font-size: 60px;
+    font-weight: 900;
+    margin-bottom: 25px;
+    text-shadow: 0 8px 25px rgba(0,0,0,0.7);
+}
+
+.hero__subtitle {
+    font-size: 26px;
+    margin-bottom: 40px;
+    text-shadow: 0 5px 18px rgba(0,0,0,0.6);
+}
+
+.btn {
+    padding: 16px 45px;
+    border-radius: var(--radius);
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+}
+
+.btn--primary {
+    background: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
+    color: var(--clr-white);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.45);
+}
+
+.btn--primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+.btn--outline {
+    border: 2px solid var(--clr-white);
+    color: var(--clr-white);
+}
+
+.btn--outline:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.features, .testimonials, .pricing {
+    padding: var(--padding-section) 20px;
+    text-align: center;
+}
+
+.features__grid, .testimonials__grid, .pricing__grid {
+    display: grid;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.feature-card, .testimonial, .price-card {
+    background: linear-gradient(to top right, rgba(8, 12, 235, 0.957), rgba(255,255,255,0.05));
+    padding: 20px;       
+    border-radius: var(--radius);
+    border: 1px solid rgba(238, 7, 7, 0.25);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+    max-height: none;
+}
+
+.price-card {
+    min-height: 280px;  
+}
+
+.price-card--featured {
+    border: 2px solid var(--clr-primary);
+}
+
+.feature-card:hover, .testimonial:hover, .price-card:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(to top right, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+    border-color: var(--clr-primary);
+}
+
+.feature-card__title, .testimonial__author, .section-title,
+.price-card h3, .price-card .price, .price-card ul li {
+    color: var(--clr-white);
+    text-shadow: 0 3px 12px rgba(0,0,0,0.7);
+}
+
+.testimonial__text, .feature-card__text {
+    color: var(--clr-white);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+}
+
+.footer {
+    padding: 25px 0;
+    text-align: center;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(10px);
+    color: var(--clr-white);
+    font-size: 15px;
+}
+
+@media (min-width: 768px) {
+    .features__grid, .testimonials__grid { grid-template-columns: repeat(2, 1fr); }
+    .pricing__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .features__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 500px) {
+    .hero__title { font-size: 40px; }
+    .hero__subtitle { font-size: 20px; }
+}
+
+.contact-section {
+    padding: 60px 0;
+    position: relative;
+    z-index: 3;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.07);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    backdrop-filter: blur(8px);
+}
+
+.contact-form label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+    color: #fff;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(0,0,0,0.35);
+    color: #fff;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255,255,255,0.75);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background: rgba(0,0,0,0.55);
+    border-color: var(--clr-primary);
+    outline: none;
+}
+
+.contact-form button {
+    width: 100%;
+    font-size: 17px;
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--clr-primary);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    opacity: 0.85;
+}
+.btn--outline {
+    display: inline-block;  
+    margin-top: 20px;       
+}
+.price-card .btn--primary {
+    display: inline-block; 
+    margin-top: 15px; 
+}
