@@ -39,19 +39,19 @@ body.page-index {
 }
 body.page-about {
     background-image: url("images/httd.jpg");
-    background-size: 190%;        /* تصغير الصورة */
+    background-size: 190%;      
     background-repeat: no-repeat;
     background-position: center;
 }
 body.page-contact {
     background-image: url("images/htts.jpg");
-    background-size: 120%;        /* تصغير الصورة */
+    background-size: 120%;      
     background-repeat: no-repeat;
     background-position: center;
 }
 body.page-services {
     background-image: url("images/htte.jpg");
-    background-size: 150%;        /* تصغير الصورة */
+    background-size: 150%;        
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -290,4 +290,36 @@ body.page-services {
 .price-card .btn--primary {
     display: inline-block; 
     margin-top: 15px; 
+}/* التنسيق الأساسي (يظهر على اللابتوب والشاشات الكبيرة) */
+body {
+    font-size: 18px;
+    background-size: 80%;          /* الخلفية أصغر قليلاً */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* تنسيق خاص للجوال (شاشات أصغر من 768px) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;           /* تصغير الخط للجوال */
+        background-size: cover;    /* الخلفية تغطي الشاشة بالكامل */
+        background-position: center;
+    }
+
+    .header__logo {
+        font-size: 20px;           
+    }
+
+    .nav__list {
+        flex-direction: column;    
+        gap: 10px;                
+    }
+
+    .hero__title {
+        font-size: 24px;         
+    }
+
+    .hero__description {
+        font-size: 14px;           
+    }
 }
