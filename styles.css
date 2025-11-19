@@ -33,28 +33,57 @@ body::before {
 
 body.page-index {
     background-image: url("images/http.jpg");
-    background-size: 210%;        /* تصغير الصورة */
+    background-size: 220%;
     background-repeat: no-repeat;
     background-position: center;
 }
-body.page-about {
+
+@media (max-width: 768px) {
+    body.page-index {
+        background-size: cover;
+        background-position: center;
+    }
+}body.page-about {
     background-image: url("images/httd.jpg");
-    background-size: 190%;      
+    background-size: 200%;
     background-repeat: no-repeat;
     background-position: center;
 }
+
+@media (max-width: 768px) {
+    body.page-about {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
 body.page-contact {
     background-image: url("images/htts.jpg");
-    background-size: 120%;      
+    background-size: 120%;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+@media (max-width: 768px) {
+    body.page-contact {
+        background-size: cover;
+        background-position: center;
+    }
 }
 body.page-services {
-    background-image: url("images/htte.jpg");
-    background-size: 150%;        
+    background-image: url("images/htts.jpg");
+    background-size: 170%;
     background-repeat: no-repeat;
     background-position: center;
 }
+
+@media (max-width: 768px) {
+    body.page-services {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
 
 
 .header {
