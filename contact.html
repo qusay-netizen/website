@@ -7,56 +7,45 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page-contact">
-
 <header class="header">
     <div class="header__container">
         <h1 class="header__logo">Brand</h1>
-
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <label for="nav-toggle" class="header__toggle"></label>
-
         <nav class="nav">
             <ul class="nav__list">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="about.html">من نحن</a></li>
-                <li><a href="contact.html" class="active">تواصل</a></li>
-                <li><a href="services.html">الخدمات</a></li>
+               <li><a href="index.html" class="nav__link">الرئيسية</a></li>
+                    <li><a href="services.html" class="nav__link">الخدمات</a></li>
+                    <li><a href="contact.html" class="nav__link">تواصل</a></li>
+                    <li><a href="about.html" class="nav__link">من نحن</a></li>
             </ul>
         </nav>
     </div>
 </header>
-
 <section class="page-header">
     <div class="container">
         <h2>تواصل معنا</h2>
         <p>يسعدنا تلقي رسائلك واستفساراتك في أي وقت.</p>
     </div>
 </section>
-
 <section class="contact-form-section">
   <div class="container">
     <form class="contact-form" action="https://formspree.io/f/xeonodbl" method="POST">
       <label>الاسم الكامل</label>
       <input type="text" name="name" placeholder="أدخل اسمك" required>
-
       <label>البريد الإلكتروني</label>
       <input type="email" name="email" placeholder="example@mail.com" required>
-
       <label>رسالتك</label>
       <textarea name="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
-
       <button class="btn btn--primary" type="submit">إرسال</button>
-
       <input type="hidden" name="_next" value="thankyou.html">
     </form>
   </div>
 </section>
-
 <footer class="footer">
     <div class="container footer__content">
         <p>© 2025 جميع الحقوق محفوظة — Brand</p>
     </div>
 </footer>
-
 </body>
 </html>
